@@ -78,8 +78,7 @@
   });
 
   // Validación y envío del formulario
-  // IMPORTANTE: por defecto se previene el envío real.
-  // Integra EmailJS, Formspree o tu backend y reemplaza el bloque de "fake submit".
+  // Envío vía correo: abre cliente de email con mailto y contenido prellenado
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form || !statusEl) return;
@@ -102,14 +101,24 @@
       return;
     }
 
-    // Simulación de envío (reemplaza con tu lógica de envío real)
+    // Construir mailto con asunto y cuerpo
     try {
-      statusEl.textContent = 'Enviando...';
-      await new Promise((res) => setTimeout(res, 900));
-      statusEl.textContent = 'Gracias, tu mensaje ha sido enviado.';
+      const recipient = 'contacto@nicolasmoen.dev';
+      const subject = encodeURIComponent(`Contacto de ${name} - Portafolio`);
+      const bodyLines = [
+        `Nombre: ${name}`,
+        `Email: ${email}`,
+        '',
+        message,
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+      const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+      statusEl.textContent = 'Abriendo tu cliente de correo...';
+      window.location.href = mailtoUrl;
       form.reset();
     } catch (err) {
-      statusEl.textContent = 'Ocurrió un error. Inténtalo nuevamente.';
+      statusEl.textContent = 'No se pudo abrir el correo. Inténtalo nuevamente.';
     }
   });
 })();

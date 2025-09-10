@@ -29,6 +29,7 @@ Coloca tus recursos aquí:
 3. Personaliza colores y tipografías en `assets/css/styles.css` (variables `:root`).
 4. Ajusta redes, tema y formulario en `assets/js/script.js`.
 5. CV: coloca tu PDF en `assets/docs/` y el enlace del botón lo detectará vía ruta relativa.
+6. Contacto: por defecto abre tu cliente de correo con `mailto:` a `contacto@nicolasmoen.dev`.
 
 ## Personalización rápida
 
