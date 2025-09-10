@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Portafolio profesional - Desarrollador/a de software, proyectos, experiencia y contacto.">
+    <meta property="og:title" content="Portafolio de Nicolás Moen">
+    <meta property="og:description" content="Proyectos, experiencia, habilidades y contacto.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Portafolio de Nicolás Moen</title>
+
+    <!-- Fuente y estilos principales -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--
+        INSTRUCCIONES RÁPIDAS DE EDICIÓN
+        - Cambia tu nombre, rol y CTA en la sección hero.
+        - Agrega tu foto en /assets/avatar.jpg y actualiza alt si es necesario.
+        - Edita "Sobre mí" con tu bio corta y logros.
+        - Actualiza habilidades en la sección Habilidades.
+        - Añade/edita tu experiencia y proyectos (usa la plantilla comentada).
+        - Configura enlaces de redes en el header y footer.
+        - Ajusta textos del formulario de contacto y el email de destino en script.js.
+    -->
+
+    <header class="site-header" id="top">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="Inicio">
+                <!-- Cambia el texto del logo por tus iniciales o marca -->
+                <span class="logo">NM</span>
+                <span class="brand-text">Nicolás Moen</span>
+            </a>
+
+            <nav class="nav" aria-label="Principal">
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+                    <span class="toggle-bar"></span>
+                    <span class="toggle-bar"></span>
+                    <span class="toggle-bar"></span>
+                </button>
+                <ul id="primary-nav" class="nav-list">
+                    <!-- Actualiza los enlaces según tus secciones -->
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="actions">
+                <button id="theme-toggle" class="button button-ghost" aria-label="Cambiar tema">🌓</button>
+                <!-- Reemplaza con tus redes -->
+                <a class="icon-link" href="https://www.linkedin.com/in/nicolasmoen" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">in</a>
+                <a class="icon-link" href="https://github.com/Moenni" target="_blank" rel="noreferrer noopener" aria-label="GitHub">GH</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" aria-label="Presentación">
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <!-- Cambia tu nombre, rol y descripción -->
+                    <h1>Hola, soy <span class="highlight">Nicolás Moen</span></h1>
+                    <p class="subtitle">Desarrollador Frontend • UI/UX • Freelancer</p>
+                    <p class="description">Ayudo a empresas y startups a construir productos web rápidos, accesibles y escalables. Apasionado/a por la calidad del código, el diseño y la experiencia de usuario.</p>
+                    <div class="cta-group">
+                        <!-- Cambia el enlace a tu CV -->
+                        <a class="button" href="assets/CV.pdf" target="_blank" rel="noreferrer">Descargar CV</a>
+                        <a class="button button-ghost" href="#proyectos">Ver proyectos</a>
+                    </div>
+                </div>
+                <div class="hero-media">
+                    <!-- Reemplaza avatar.jpg por tu foto (recomendado 400x400) -->
+                    <img src="assets/avatar.jpg" alt="Foto de Nicolás Moen" class="avatar">
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MI -->
+        <section id="sobre-mi" class="section" aria-labelledby="sobre-mi-title">
+            <div class="container">
+                <h2 id="sobre-mi-title" class="section-title">Sobre mí</h2>
+                <!-- Bio personalizada -->
+                <p>
+                    Soy un desarrollador Frontend enfocado en React y TypeScript. Diseño y construyo
+                    interfaces accesibles, rápidas y mantenibles, cuidando la experiencia de usuario y el
+                    detalle visual. Disfruto optimizar performance, documentar componentes y colaborar con
+                    equipos ágiles para entregar valor continuo.
+                </p>
+                <!-- Logros / highlights -->
+                <ul class="highlights">
+                    <li>Lighthouse 90+ y Core Web Vitals en verde en proyectos recientes.</li>
+                    <li>Accesibilidad AA con buenas prácticas a11y y pruebas manuales.</li>
+                    <li>Automatización básica con CI/CD y librerías de componentes reutilizables.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="habilidades" class="section alt" aria-labelledby="habilidades-title">
+            <div class="container">
+                <h2 id="habilidades-title" class="section-title">Habilidades</h2>
+                <!-- Agrega/edita tus skills; usa 3-6 categorías -->
+                <div class="skills-grid">
+                    <article class="card">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5, CSS3, JavaScript (ES202x)</li>
+                            <li>React, Next.js, Vite</li>
+                            <li>Accesibilidad, SEO técnico</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Node.js, Express</li>
+                            <li>REST APIs, autenticación</li>
+                            <li>MongoDB, PostgreSQL</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Herramientas</h3>
+                        <ul>
+                            <li>Git, GitHub, CI/CD</li>
+                            <li>Figma, Storybook</li>
+                            <li>Testing (Jest, React Testing Library)</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCIA -->
+        <section id="experiencia" class="section" aria-labelledby="experiencia-title">
+            <div class="container">
+                <h2 id="experiencia-title" class="section-title">Experiencia</h2>
+                <div class="timeline">
+                    <!-- DUPLICA ESTE BLOQUE PARA MÁS EXPERIENCIAS -->
+                    <article class="timeline-item">
+                        <div class="timeline-header">
+                            <h3>Compañía XYZ</h3>
+                            <span class="meta">Desarrollador/a Frontend • 2023 — Presente</span>
+                        </div>
+                        <p>Responsable de desarrollar componentes reutilizables, optimizar performance y colaborar con diseño para mejorar la UX.</p>
+                        <ul>
+                            <li>Migré el sistema de estilos a CSS variables, reduciendo CSS en 30%.</li>
+                            <li>Implementé lazy-loading y code splitting.</li>
+                            <li>Mejoré accesibilidad alcanzando nivel AA.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="section alt" aria-labelledby="proyectos-title">
+            <div class="container">
+                <h2 id="proyectos-title" class="section-title">Proyectos</h2>
+                <div class="projects-grid">
+                    <!-- PLANTILLA DE PROYECTO: DUPLICA Y RELLENA -->
+                    
+                    <!-- Nuevos proyectos con URLs provistas -->
+                    <article class="project-card">
+                        <img src="assets/proyecto-3.jpg" alt="Captura del proyecto entregaFinal (Cypress E2E)" loading="lazy">
+                        <div class="project-content">
+                            <h3>entregaFinal (Cypress E2E)</h3>
+                            <p>Automatización de pruebas end‑to‑end con Cypress y xpath. Suites E2E para validar funcionalidades críticas.</p>
+                            <ul class="tags">
+                                <li>Cypress</li>
+                                <li>JavaScript</li>
+                                <li>Testing</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="button button-ghost" href="https://github.com/Moenni/entregaFinal" target="_blank" rel="noreferrer">Demo</a>
+                                <a class="button" href="https://github.com/Moenni/entregaFinal" target="_blank" rel="noreferrer">Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/proyecto-4.jpg" alt="Captura del proyecto Desarrollo con Python en Cursor" loading="lazy">
+                        <div class="project-content">
+                            <h3>Desarrollo con Python en Cursor</h3>
+                            <p>Repositorio educativo con módulos de Python, análisis de datos y notebooks. Enfoque en buenas prácticas y documentación.</p>
+                            <ul class="tags">
+                                <li>Python</li>
+                                <li>Pandas</li>
+                                <li>Jupyter</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="button button-ghost" href="https://github.com/Moenni/Desarrollo-con-python-en-Cursor" target="_blank" rel="noreferrer">Demo</a>
+                                <a class="button" href="https://github.com/Moenni/Desarrollo-con-python-en-Cursor" target="_blank" rel="noreferrer">Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/proyecto-5.jpg" alt="Captura del proyecto Python Prep" loading="lazy">
+                        <div class="project-content">
+                            <h3>Python Prep</h3>
+                            <p>Ejercicios y preparación en Python: estructuras, algoritmos y manejo de datos. Base sólida para proyectos posteriores.</p>
+                            <ul class="tags">
+                                <li>Python</li>
+                                <li>Algoritmos</li>
+                                <li>CLI</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="button button-ghost" href="https://github.com/Moenni/Python-Prep" target="_blank" rel="noreferrer">Demo</a>
+                                <a class="button" href="https://github.com/Moenni/Python-Prep" target="_blank" rel="noreferrer">Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="assets/proyecto-6.jpg" alt="Captura del proyecto Jueguito en C" loading="lazy">
+                        <div class="project-content">
+                            <h3>Proyecto Jueguito (C)</h3>
+                            <p>Pequeño juego en C para practicar conceptos de programación estructurada y manejo de entradas.</p>
+                            <ul class="tags">
+                                <li>C</li>
+                                <li>Consola</li>
+                                <li>Algoritmos</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="button button-ghost" href="https://github.com/Moenni/proyectoJueguitoC-" target="_blank" rel="noreferrer">Demo</a>
+                                <a class="button" href="https://github.com/Moenni/proyectoJueguitoC-" target="_blank" rel="noreferrer">Código</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="section" aria-labelledby="contacto-title">
+            <div class="container">
+                <h2 id="contacto-title" class="section-title">Contacto</h2>
+                <p>¿Tienes un proyecto o propuesta? Envíame un mensaje y te responderé pronto.</p>
+                <form id="contact-form" class="contact-form" novalidate>
+                    <!-- name: requerido, min 2 -->
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+
+                    <!-- email: requerido, formato -->
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+
+                    <!-- message: requerido, min 10 -->
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Cuéntame sobre tu proyecto" required></textarea>
+
+                    <div class="form-actions">
+                        <button type="submit" class="button">Enviar</button>
+                        <p id="form-status" role="status" aria-live="polite" class="status"></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">↑</button>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Nicol. Todos los derechos reservados.</p>
+            <!-- Actualiza con tus redes -->
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/nicolasmoen" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+                <a href="https://github.com/Moenni" target="_blank" rel="noreferrer noopener">GitHub</a>
+                <a href="mailto:contacto@nicolasmoen.dev">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
+
+
