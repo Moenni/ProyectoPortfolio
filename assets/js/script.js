@@ -77,6 +77,20 @@
     localStorage.setItem(THEME_KEY, next);
   });
 
+  // Animaciones suaves en scroll (IntersectionObserver)
+  const revealTargets = document.querySelectorAll('.section, .project-card, .card, .timeline-item, .avatar, .hero-copy, .hero-media');
+  const addRevealClass = (el) => el.classList.add('reveal');
+  revealTargets.forEach(addRevealClass);
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    }
+  }, { threshold: 0.12 }) : null;
+  revealTargets.forEach((el) => io?.observe(el));
+
   // Validación y envío del formulario
   // Envío vía correo: abre cliente de email con mailto y contenido prellenado
   form?.addEventListener('submit', async (e) => {

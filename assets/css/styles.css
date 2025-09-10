@@ -20,7 +20,7 @@
     --shadow-1: 0 8px 24px rgba(0,0,0,0.25);
     --container: 1100px;
 
-    --font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 /* Modo claro */
@@ -73,6 +73,27 @@ body {
     line-height: 1.6;
 }
 
+/* Jerarquía tipográfica */
+h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(32px, 4.2vw, 48px);
+    line-height: 1.15;
+    margin: 0 0 10px;
+}
+h2 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.2;
+    margin: 0 0 10px;
+}
+h3 {
+    font-weight: 600;
+    font-size: clamp(18px, 2.2vw, 20px);
+    margin: 0 0 6px;
+}
+
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 
@@ -83,11 +104,12 @@ a { color: inherit; text-decoration: none; }
     padding: 0 20px;
 }
 
-.section { padding: 72px 0; }
+.section { padding: 88px 0; }
+.section:not(:first-of-type) { border-top: 1px solid var(--color-border); }
 .section.alt { background: var(--color-surface); }
 .section-title {
-    font-size: 28px;
-    margin: 0 0 24px;
+    font-size: clamp(22px, 2.6vw, 28px);
+    margin: 0 0 28px;
 }
 
 /* Header */
@@ -229,6 +251,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Utilidades */
 .highlights { color: var(--color-muted); }
+.highlights li { margin-bottom: 6px; }
 
 /* Visor de CV embebido */
 .cv-viewer { margin-top: 16px; }
@@ -236,6 +259,20 @@ a { color: inherit; text-decoration: none; }
     width: 100%;
     height: 70vh;
     border: 0;
+}
+
+/* Animaciones suaves (reveal on scroll) */
+.reveal {
+    opacity: 0;
+    transform: translateY(12px);
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: opacity .6s ease, transform .6s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal.is-visible { transition: none; transform: none; opacity: 1; }
 }
 
 /* Responsivo */
