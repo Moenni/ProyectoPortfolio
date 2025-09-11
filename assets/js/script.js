@@ -22,17 +22,58 @@
 
   // Menú móvil
   if (navToggle && navList) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navList.classList.toggle('show');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
+    let isMenuOpen = false;
+    
+    const toggleMenu = () => {
+      isMenuOpen = !isMenuOpen;
+      navList.classList.toggle('show', isMenuOpen);
+      navToggle.setAttribute('aria-expanded', String(isMenuOpen));
+      
+      // Prevenir scroll del body cuando el menú está abierto
+      if (isMenuOpen) {
+        document.body.classList.add('menu-open');
+      } else {
+        document.body.classList.remove('menu-open');
+      }
+    };
+
+    const closeMenu = () => {
+      if (isMenuOpen) {
+        isMenuOpen = false;
+        navList.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      }
+    };
+
+    navToggle.addEventListener('click', toggleMenu);
 
     // Cerrar al navegar
     navList.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('show');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Cerrar menú al hacer scroll
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      if (isMenuOpen) {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(closeMenu, 150);
+      }
+    }, { passive: true });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+      if (isMenuOpen && !navList.contains(e.target) && !navToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Cerrar menú con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
     });
   }
 
